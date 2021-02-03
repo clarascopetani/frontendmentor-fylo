@@ -1,0 +1,52 @@
+/* . {background-color:lightblue;}
+.col2 {background-color:lightgreen;} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  width: 100%;
+  /* This defines the number of horizontal columns and how wide they all are */
+   grid-template-columns: 40px 50px auto 50px 40px;
+   /* This determines the number of verticle rows and their respective heights */
+   grid-template-rows: 25% 100px auto;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 2rem;
+  box-sizing: border-box;
+
+}
+
+.grid-1col{
+  grid-template-columns: 100%;
+}
+
+.grid-2cols{
+  grid-template-columns: repeat(2, 6fr);
+
+}
+
+.grid-4cols{
+  grid-template-columns: repeat(4, 3fr);
+}
+
+
+/* SPACING */
+
+.spacing-s {
+  padding: 1rem 3rem;
+}
+
+.spacing-m {
+  padding: 2.8rem 3rem;
+}
+
+.spacing-l {
+  padding: 5rem 3rem;
+}

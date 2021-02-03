@@ -1,0 +1,40 @@
+.col1 {background-color:lightblue;}
+.col2 {background-color:lightgreen;}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 2rem;
+
+  &--2cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--3cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.col1{
+  background-color:lightblue;
+}
+
+.col2{
+  background-color:lightgreen;
+}
+
+
+:root {
+  --2cols:repeat(2, 1fr);
+  --3cols:repeat(3, 1fr);
+  --4cols:repeat(4, 1fr);
+}

@@ -1,0 +1,10 @@
+:root {
+  --primary_blueDark: #070439;
+  --primary_blueMedium: #585989;
+  --accent_blueBright: #3065f8;
+  --accent_cyanModerate: #3c9f8f;
+  --neutral_greyDark: #353538;
+  --neutral_greyGradish: #f6f6fe;
+  --neutral_greyLight: #bfbfbf;
+  --surface: white;
+}
