@@ -11,9 +11,9 @@
 body {
   width: 100%;
   /* This defines the number of horizontal columns and how wide they all are */
-   grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-columns: 40px 50px auto 50px 40px;
    /* This determines the number of verticle rows and their respective heights */
-   grid-template-rows: 25% 100px auto;
+  grid-template-rows: 25% 100px auto;
 }
 
 .grid {
@@ -36,7 +36,10 @@ body {
   grid-template-columns: repeat(4, 3fr);
 }
 
-
+.container{
+  max-width: 1440px;
+  margin: auto;
+}
 /* SPACING */
 
 .spacing-s {
@@ -49,4 +52,29 @@ body {
 
 .spacing-l {
   padding: 5rem 3rem;
+}
+
+/* Mobile */
+@media screen and (min-width: 375px) and (max-width: 768px){
+  .mainNav-logo svg {
+      width: 180px;
+      height: 50px;
+  }
+  
+  .container {width: 90%;}
+  .container.grid.grid-2cols {
+    display: flex;
+    flex-flow: column-reverse;
+    text-align: center;
+  }
+
+  .spacing-l, .spacing-m, .spacing-s {padding: 1em 1.3rem;}
+
+  #mainAccess .container.grid.grid-2cols,  #mainFooter .container.grid.grid-4cols{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+  }
+
 }

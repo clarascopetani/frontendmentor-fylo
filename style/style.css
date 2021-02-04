@@ -1,33 +1,58 @@
+:root {
+  --shadow-small: 4px 4px 8px rgb(0 0 0 / 4%);
+  --shadow-medium: 2px ​1px 6px rgb(86 86 86 / 41%);
+  --shadow-large: 0 16px 24px rgba(7,4,57,0.16), 0 10px 10px rgba(7,4,57,0.22);
+}
+
+
 /* ------------------------
 SECTION NAV
 ------------------------ */
+
+
 #mainNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+
+.mainNav-logo{
+  width: 180px;
+  box-sizing: border-box;
+}
+
+.mainFooter-logo #logoFylo-icon, .mainFooter-logo #logoFylo-text{
+  fill:white
+}
+
 #mainNav.menu_default{
   background-color: white;
-  font-size: var(--textSize-medium);
+  font-size: var(--textSize-regular);
 }
 
 #mainNav.menu_sticky {
-  background-color: var(--neutral_greyGradish);
+  background-color: var(--primary_blueMedium);
   font-size: var(--textSize-regular);
-  box-shadow: 0 16px 24px rgba(7,4,57,0.16), 0 10px 10px rgba(7,4,57,0.22);
+  box-shadow: var(--shadow-large);
+  color: white;
   overflow: hidden;
-  transition: 0.4s;
+  transition:background 0.2s ease,
+              padding 0.3s ease-out;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 99;
 }
 
+#mainNav.menu_sticky .mainNav-logo #logoFylo-text{
+  fill:white
+}
+
 #mainNav .menu li{
   list-style: none;
   display: inline-block;
-  padding-right: 45px;
+  padding-right: 2.5rem;
 }
 
 #mainNav a {
@@ -41,6 +66,7 @@ SECTION NAV
 }
 
 #mainNav a:hover {
+  transition: all 0.5s ease-out;
   color: var(--accent_blueBright);
 }
 
@@ -52,10 +78,6 @@ SECTION HERO
   padding: 2rem 0;
   display: grid;
   align-items: center;
-}
-
-#mainHero h1, p {
-  color: var(--primary_blueDark);
 }
 
 #mainHero h1 {
@@ -106,7 +128,9 @@ SECTION ABOUT
 }
 
 .about-link:hover{
-  border-bottom: 3px solid var(--accent_blueBright);
+  transition: all 0.5s ease-out;
+  color: var(--accent_cyanLight);
+  border-bottom: 3px solid var(--accent_cyanLight);
 }
 
 .about-link:after{
@@ -118,6 +142,11 @@ SECTION ABOUT
   margin: -3px 4px;
 }
 
+.about-link:hover::after{
+  transition: margin-left 0.5s;
+  margin-left: 20px;
+  background: url(../images/icon-arrow-hover.svg) no-repeat;
+}
 
 .avatar{
   clip-path: circle(50% at 50% 50%);
@@ -134,13 +163,13 @@ SECTION ABOUT
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .testimonial-footer p {
   font-size: var(--textSize_small);
   line-height: 1.2rem;
-  flex-direction: column;
-  justify-content: center;
+  margin-bottom: 0;
 }
 
 /* ------------------------
@@ -152,12 +181,12 @@ CARD COMPONENT
   margin: 2rem 0;
   width: 70%;
   border-radius: 4px;
-  box-: 4px 4px 8px rgb(0 0 0 / 4%);
+  box-shadow: var(--shadow-small);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .card:hover {
-  box-shadow: 0 16px 24px rgba(7,4,57,0.16), 0 10px 10px rgba(7,4,57,0.22);
+  box-shadow: var(--shadow-large);
 }
 
 /* ------------------------
@@ -191,6 +220,7 @@ SECTION FOOTER
   align-self: flex-start;
   margin-bottom: 15px;
   align-items: center;
+  margin-bottom: 0;
 }
 
 #mainFooter .icon-phone::before{
@@ -220,8 +250,8 @@ SECTION FOOTER
   height: 50px;
 }
 
-svg {
-  fill: white;
+.mainFooter-logo #logoFylo-icon, .mainFooter-logo #logoFylo-text{
+  fill:white
 }
 
 .social-icons {
@@ -232,8 +262,15 @@ svg {
   font-size: 1.2rem;
 }
 
+.social-icons i:hover{
+  transition: all 0.5s ease-out;
+  background-color: var(--neutral_greyGradish);
+  border-color: var(--accent_blueBright);
+  color:var(--accent_blueBright);
+}
+
 .social-icons i {
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 16px;
   border-radius: 34px;
   margin-right: 1rem;
@@ -253,8 +290,12 @@ form button {
   border-radius: 4px;
   border: none;
   font-size: 1rem;
+  box-shadow: var(--shadow-medium);
 }
-
+form button:hover{
+  transition: all 0.5s ease-out;
+  background-color: var(--accent_blueLight);
+}
 label {
   /* Tamaño y alineación uniforme */
   display: inline-block;
@@ -284,4 +325,74 @@ textarea:focus, input:active,
 textarea:active  {
   /* Destacado adicional para elementos que tienen el cursor */
   border-color: var(--accent_blueBright);
+}
+
+
+/* Mobile */
+@media screen and (max-width: 375px) and (max-width: 680px){
+
+  .mainNav-logo{
+    width: 100px;
+    box-sizing: border-box;
+  }
+
+  #mainNav.spacing-m{
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+  }
+
+  #mainNav.menu_default {
+    line-height: 1rem;
+    background-color: white;
+    font-size: var(--textSize-medium);
+  }
+
+  #mainNav.menu_sticky{
+
+  }
+
+  #mainNav .menu li {
+    font-size: var(--textSize-regular);
+    padding-right: 0.3rem;
+  }
+
+  #mainAbout, #mainNav {margin: 0 auto;}
+
+  .illustration {
+      max-width: 75%;
+      margin: 0 auto;
+  }
+
+  .card{
+    width: 100%;
+    text-align: left;
+  }
+
+  form{
+    margin: 2rem auto;
+  }
+
+  form button, form input {
+    margin: 0.5rem auto;
+    width: 100%;
+  }
+
+    #mainFooter .icon-before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.2rem;
+    }
+
+    #mainFooter .mainFooter-logo{
+        margin: 2rem auto;
+    }
+
+  .social-icons {
+      justify-content: center;
+      font-size: 0.9rem;
+  }
 }
