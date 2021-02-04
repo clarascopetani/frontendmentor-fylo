@@ -209,8 +209,24 @@ SECTION ACCESS
 /* ------------------------
 SECTION FOOTER
 ------------------------ */
-#mainFooter {
+#mainFooter, .attribution {
   background-color: var(--primary_blueDark);
+}
+
+
+.attribution p{
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  color: var(--neutral_greyLight);
+  font-size: var(--textSize-small);
+}
+.attribution a{
+  padding-left: 5px;
+  color: var(--accent_blueLight);
 }
 
 #mainFooter ul li {
