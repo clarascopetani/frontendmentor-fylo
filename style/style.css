@@ -76,12 +76,16 @@ SECTION HERO
 ------------------------ */
 #mainHero {
   padding: 2rem 0;
+  margin-bottom: 3rem;
   display: grid;
   align-items: center;
 }
 
 #mainHero h1 {
   font-weight: 600;
+  color: var(--primary_blueDark);
+  font-size: var(--textSize-large);
+  line-height: 3rem;
 }
 
 .illustration {
